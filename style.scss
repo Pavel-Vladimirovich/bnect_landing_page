@@ -3,7 +3,7 @@ body {
 }
 
 .wrapper {
-    width: 1440px;
+    // width: 1440px;
     height: 100%;
     margin: 0 auto;
     background: #FFFFFF;
@@ -11,7 +11,7 @@ body {
 }
 
 .container {
-    width: 1180px;
+    max-width: 1180px;
     margin: 0 auto;
 }
 
@@ -74,4 +74,56 @@ body {
         margin-bottom: 15px;
         background: url(img/Vector_check_icon.svg) 0 2px/ auto auto no-repeat;
     }
+}
+
+//=====================================================================================
+.suggest {
+    // border: black 1px solid;
+    // .suggest__content
+
+    &__content {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+        border: black solid 1px;
+    }
+}
+
+.content {
+
+    // .content__item
+
+    &__item {
+        border: 1px solid red;
+        display: flex;
+        align-items: center;
+        max-height: 100px;
+        max-width: 450px;
+        
+    }
+}
+
+.item {
+
+    // .item__img
+
+    &__img {
+        display: block;
+    }
+
+    // .item__info
+
+    &__info {}
+}
+
+.info {
+
+    // .info__title
+
+    &__title {}
+
+    // .info__text
+
+    &__text {}
 }
