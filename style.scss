@@ -1,19 +1,14 @@
 html {
+
+    font-size: 16px;
+}
+
+body {
+    font-size: 1rem;
     box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
     background: #d6d6d6;
-    font-size: 16px;
-  }
-  
-  body {
-    font-size: 1rem;
-  }
-
-// body {
-//     font-family: Arial, Helvetica, sans-serif;
-//     background: #D6D6D6;
-//     font-size: 1rem;
-// }
+}
 
 .wrapper {
     max-width: 1440px;
@@ -27,27 +22,41 @@ html {
     margin: 0 auto;
     padding: 0px 20px;
 }
+
 // =============================================================
 .work-processes {
-    background: url(img/Rectangle.png) 0 0/contain no-repeat;
+    background: url(img/Rectangle.png) 0 0 / cover no-repeat local;
     position: relative;
     height: 700px;
     margin-bottom: 80px;
 
-    // .work-processes__laptop-img
+    @media (max-width: 992px) {
+        margin-bottom: 40px;
+    }
 
-    &__laptop-img {
+    // .work-processes__laptop-image
+
+    &__laptop-image {
         position: absolute;
         right: 0px;
         top: 80px;
         z-index: 2;
         max-width: 100%;
-        // border: red 1px solid;
+
+        @media (max-width: 1200px) {
+            width: 500px;
+        }
+
+        @media (max-width: 992px) {
+            width: 420px;
+            // top: 480px;
+            display: none;
+        }
     }
 
-    // .work-processes__letter-img
+    // .work-processes__letter-image
 
-    &__letter-img {
+    &__letter-image {
         position: absolute;
         top: -91px;
         right: 350px;
@@ -59,13 +68,18 @@ html {
         max-width: 580px;
         padding-top: 140px;
         color: #FFFFFF;
+
+        @media (max-width: 576px) {
+            padding-top: 50px;
+        }
     }
 
     // .work-processes__title
 
     &__title {
         font-weight: 600;
-        font-size: 36px;
+        font-size: clamp(1.625rem, 1.4167rem + 0.9259vw, 2.25rem);
+        // font-size: 36px;
         line-height: 124%;
         margin-bottom: 24px;
     }
@@ -75,7 +89,7 @@ html {
     &__text {
         font-weight: 400;
         // font-size from 18px to 16px;
-        font-size: 18px;
+        font-size: clamp(1rem, 0.9583rem + 0.1852vw, 1.125rem);
         line-height: 140%;
         padding-left: 25px;
         margin-bottom: 15px;
@@ -95,13 +109,15 @@ html {
 
     &__title {
         font-weight: 600;
-        // font-size from 36px to 26px;
-        // font-size: clamp(1.625rem, 1.4167rem + 0.9259vw, 2.25rem);
-        font-size: clamp(1.375rem, 1.1667rem + 0.9259vw, 2rem);
+        font-size: clamp(1.625rem, 1.4167rem + 0.9259vw, 2.25rem);
         line-height: 124%;
         text-align: center;
         color: #333333;
         margin-bottom: 64px;
+
+        @media (max-width: 992px) {
+            margin-bottom: 34px;
+        }
     }
 
     // .management__inner
@@ -116,18 +132,10 @@ html {
 }
 
 .management {
-    img {
-        max-width: 100%;
-        float:left;
-    }
 
-   // .management__card
+    // .management__card
     &__card {
-        display: flex;
-        align-items: flex-start;
         max-width: 578px;
-        flex-direction: column;
-        // max-height: 172px;
         padding: clamp(12px, 5vw, 32px);
         background: #FFFFFF;
         border: 1px solid #EEEEEE;
@@ -135,36 +143,24 @@ html {
         border-radius: 12px;
 
         @media (max-width: 992px) {
-            max-width: 100%;
+            min-width: 100%;
         }
+    }
+
+    // .management__card-image
+    &__card-image {
+        max-width: 100%;
+        float: left;
+        margin: 0px 24px 5px 0px;
 
         @media (max-width: 768px) {
-            // min-width: 100%;
+            width: 44px;
+            margin: 0px 14px 5px 0px;
         }
     }
 
-    // .management__card-img
-    &__card-img {
-
-        img {
-            max-width: 100%;
-            float:left;
-        }
-    }
-
-    // .management__info
-    &__info {
-        padding-left: 24px;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        max-width: 100%;
-        max-height: 100%;
-        // border: #4F4F4F 1px dashed;
-
-    }
-
-    // .management__info-title
-    &__info-title {
+    // .management__card-title
+    &__card-title {
         font-weight: 600;
         font-size: 18px;
         line-height: 24px;
@@ -172,8 +168,8 @@ html {
         margin-bottom: 12px;
     }
 
-    // .management__info-text
-    &__info-text {
+    // .management__card-text
+    &__card-text {
         font-weight: 400;
         font-size: 16px;
         line-height: 24px;
@@ -246,7 +242,7 @@ html {
 
         img {
             max-width: 100%;
-           
+
         }
     }
 

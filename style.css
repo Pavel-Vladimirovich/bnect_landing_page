@@ -1,12 +1,12 @@
 html {
-  box-sizing: border-box;
-  font-family: Arial, Helvetica, sans-serif;
-  background: #d6d6d6;
   font-size: 16px;
 }
 
 body {
   font-size: 1rem;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #d6d6d6;
 }
 
 .wrapper {
@@ -23,19 +23,35 @@ body {
 }
 
 .work-processes {
-  background: url(img/Rectangle.png) 0 0/contain no-repeat;
+  background: url(img/Rectangle.png) 0 0/cover no-repeat local;
   position: relative;
   height: 700px;
   margin-bottom: 80px;
 }
-.work-processes__laptop-img {
+@media (max-width: 992px) {
+  .work-processes {
+    margin-bottom: 40px;
+  }
+}
+.work-processes__laptop-image {
   position: absolute;
   right: 0px;
   top: 80px;
   z-index: 2;
   max-width: 100%;
 }
-.work-processes__letter-img {
+@media (max-width: 1200px) {
+  .work-processes__laptop-image {
+    width: 500px;
+  }
+}
+@media (max-width: 992px) {
+  .work-processes__laptop-image {
+    width: 420px;
+    display: none;
+  }
+}
+.work-processes__letter-image {
   position: absolute;
   top: -91px;
   right: 350px;
@@ -45,15 +61,20 @@ body {
   padding-top: 140px;
   color: #FFFFFF;
 }
+@media (max-width: 576px) {
+  .work-processes__inner {
+    padding-top: 50px;
+  }
+}
 .work-processes__title {
   font-weight: 600;
-  font-size: 36px;
+  font-size: clamp(1.625rem, 1.4167rem + 0.9259vw, 2.25rem);
   line-height: 124%;
   margin-bottom: 24px;
 }
 .work-processes__text {
   font-weight: 400;
-  font-size: 18px;
+  font-size: clamp(1rem, 0.9583rem + 0.1852vw, 1.125rem);
   line-height: 140%;
   padding-left: 25px;
   margin-bottom: 15px;
@@ -70,11 +91,16 @@ body {
 }
 .management__title {
   font-weight: 600;
-  font-size: clamp(1.375rem, 1.1667rem + 0.9259vw, 2rem);
+  font-size: clamp(1.625rem, 1.4167rem + 0.9259vw, 2.25rem);
   line-height: 124%;
   text-align: center;
   color: #333333;
   margin-bottom: 64px;
+}
+@media (max-width: 992px) {
+  .management__title {
+    margin-bottom: 34px;
+  }
 }
 .management__inner {
   display: flex;
@@ -83,15 +109,8 @@ body {
   gap: clamp(1rem, 2vw, 24px);
 }
 
-.management img {
-  max-width: 100%;
-  float: left;
-}
 .management__card {
-  display: flex;
-  align-items: flex-start;
   max-width: 578px;
-  flex-direction: column;
   padding: clamp(12px, 5vw, 32px);
   background: #FFFFFF;
   border: 1px solid #EEEEEE;
@@ -100,28 +119,28 @@ body {
 }
 @media (max-width: 992px) {
   .management__card {
-    max-width: 100%;
+    min-width: 100%;
   }
 }
-.management__card-img img {
+.management__card-image {
   max-width: 100%;
   float: left;
+  margin: 0px 24px 5px 0px;
 }
-.management__info {
-  padding-left: 24px;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  max-width: 100%;
-  max-height: 100%;
+@media (max-width: 768px) {
+  .management__card-image {
+    width: 44px;
+    margin: 0px 14px 5px 0px;
+  }
 }
-.management__info-title {
+.management__card-title {
   font-weight: 600;
   font-size: 18px;
   line-height: 24px;
   color: #333333;
   margin-bottom: 12px;
 }
-.management__info-text {
+.management__card-text {
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
