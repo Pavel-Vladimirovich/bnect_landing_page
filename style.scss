@@ -1,5 +1,4 @@
 html {
-
     font-size: 16px;
 }
 
@@ -25,7 +24,7 @@ body {
 
 // =============================================================
 .work-processes {
-    background: url(img/Rectangle.png) 0 0 / cover no-repeat local;
+    background: url(img/Rectangle.png) 0 0 / cover no-repeat;
     position: relative;
     height: 700px;
     margin-bottom: 80px;
@@ -40,7 +39,7 @@ body {
         position: absolute;
         right: 0px;
         top: 80px;
-        z-index: 2;
+        z-index: 22;
         max-width: 100%;
 
         @media (max-width: 1200px) {
@@ -49,7 +48,6 @@ body {
 
         @media (max-width: 992px) {
             width: 420px;
-            // top: 480px;
             display: none;
         }
     }
@@ -60,6 +58,10 @@ body {
         position: absolute;
         top: -91px;
         right: 350px;
+
+        @media (max-width: 768px) {
+            right: 5px;
+        }
     }
 
     // .work-processes__inner
@@ -70,7 +72,7 @@ body {
         color: #FFFFFF;
 
         @media (max-width: 576px) {
-            padding-top: 50px;
+            padding-top: 100px;
         }
     }
 
@@ -78,8 +80,8 @@ body {
 
     &__title {
         font-weight: 600;
+        // font-size from 36px to 26px;
         font-size: clamp(1.625rem, 1.4167rem + 0.9259vw, 2.25rem);
-        // font-size: 36px;
         line-height: 124%;
         margin-bottom: 24px;
     }
@@ -213,10 +215,8 @@ body {
 
     &__item-title {
         font-weight: 600;
-        // font-size: clamp(1.875rem, 1.8333rem + 0.1852vw, 2rem);
+        // font-size: from 32 to 22
         font-size: clamp(1.375rem, 1.1667rem + 0.9259vw, 2rem);
-        // font-size: 2rem;
-        // font-size: 32px;
         line-height: 124%;
         color: #333333;
         margin-bottom: 16px;
@@ -227,8 +227,8 @@ body {
 
     &__item-text {
         font-weight: 400;
+        // font-size: from 18px to 16px;
         font-size: clamp(1rem, 0.9583rem + 0.1852vw, 1.125rem);
-        // font-size: 18px;
         line-height: 140%;
         color: #4F4F4F;
         max-width: 554px;
@@ -242,29 +242,51 @@ body {
 
         img {
             max-width: 100%;
-
         }
     }
 
     // .connection__form
 
     &__form {
-        // margin-left: auto;
         max-width: 480px;
         min-height: 508px;
         background: radial-gradient(100% 121.63% at 5.44% 0%, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 100%), linear-gradient(0deg, #6979F8, #6979F8), #D9D9D9;
         border-radius: 16px;
-        padding: 32px;
-        display: block;
+        padding: 82px 32px 32px 32px;
 
-        input {
-            width: 100%;
-            height: 54px;
-            background: #FFFFFF;
-            border: 1px solid #DDDDDD;
-            border-radius: 8px;
-            margin-bottom: 10px;
+
+    }
+
+    // .connection__input
+
+    &__input {
+        width: 100%;
+        height: 54px;
+        background: #FFFFFF;
+        border: 1px solid #DDDDDD;
+        border-radius: 8px;
+        padding: 13px 16px;
+        margin-bottom: 10px;
+        outline: none;
+        &::placeholder{
+            color: #999999;
         }
+    }
+
+    // .connection__btn
+
+    &__btn {
+        height: 56px;
+        width: 100%;
+        margin-top: 40px;
+        background: #FF8855;
+        border-radius: 30px;
+        border-style: none;
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 24px;
+        color: #FFFFFF;
+        cursor: pointer;
     }
 
 }
