@@ -1,5 +1,11 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+}
+
 html {
     font-size: 16px;
+    height: 100%;
 }
 
 body {
@@ -11,7 +17,6 @@ body {
 
 .wrapper {
     max-width: 1440px;
-    min-height: 100%;
     margin: 0 auto;
     background: #FFFFFF;
 }
@@ -58,9 +63,8 @@ body {
         position: absolute;
         top: -91px;
         right: 350px;
-
-        @media (max-width: 768px) {
-            right: 5px;
+        @media (max-width: 992px){
+            right: 10px;
         }
     }
 
